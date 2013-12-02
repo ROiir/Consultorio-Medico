@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Paciente">
+
+    <delete id="eliminar" parameterType="String">
+        delete from "paciente"
+        where "curp"=#{curp}
+    </delete>
+    
+    <update id="actualizar" parameterType="Paciente">
+        UPDATE "curp"
+        SET "nombre_pa"=#{nombre_pa}
+        WHERE "curp"=#{curp}
+    </update>
+    
+    <insert id="insertar" parameterType="Pasiente"  keyProperty="curp" >
+        insert into "Pasiente"("curp","nombre_pa")  values (#{curp},#{nombre_pa})
+    </insert>
+ <!--       
+    <select id="buscarPorId" parameterType="int" resultType="Perfil">
+        select p.perfil_id,p.descripcion from "perfil" p where p.perfil_id=#{perfil_id}
+    </select>
+ 
+    
+    <select id="buscarTodos" resultType="Perfil" resultMap="resultado">
+        select p.perfil_id,p.descripcion from "perfil" p     
+    </select>
+    
+    <resultMap type="Perfil" id="resultado"> 
+        <id column="perfil_id" property="perfil_id"></id>
+        <result column="descripcion" property="descripcion"></result>
+    </resultMap>
+-->
+</mapper>
