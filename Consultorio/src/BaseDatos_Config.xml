@@ -5,14 +5,14 @@
 <configuration>    
 
     <typeAliases>
-        <typeAlias type="org.beans.Cita" alias="Cita" />  
+         <typeAlias type="org.beans.Estado" alias="Estado" />  
+
+         <typeAlias type="org.beans.Cita" alias="Cita" />  
   
         <typeAlias type="org.beans.Consultorio" alias="Consultorio" />  
  
         <typeAlias type="org.beans.Doctor" alias="Doctor" />  
  
-        <typeAlias type="org.beans.Estado" alias="Estado" />  
-
         <typeAlias type="org.beans.Paciente" alias="Paciente" />  
 
         <typeAlias type="org.beans.Receta" alias="Receta" />  
@@ -32,14 +32,14 @@
         </environment>
     </environments>
     <mappers>
+        <mapper resource="org/data/Estado.xml"/>  
+ 
         <mapper resource="org/data/Cita.xml"/>    
 
-        <mapper resource="org/data/Consutorio.xml"/>    
+        <mapper resource="org/data/Consultorio.xml"/>    
 
         <mapper resource="org/data/Doctor.xml"/>    
-
-        <mapper resource="org/data/Estado.xml"/>    
-
+ 
         <mapper resource="org/data/Paciente.xml"/>    
 
         <mapper resource="org/data/Reseta.xml"/>    
