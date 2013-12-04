@@ -3,22 +3,47 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>    
+
     <typeAliases>
+        <typeAlias type="org.beans.Cita" alias="Cita" />  
+  
+        <typeAlias type="org.beans.Consultorio" alias="Consultorio" />  
+ 
+        <typeAlias type="org.beans.Doctor" alias="Doctor" />  
+ 
+        <typeAlias type="org.beans.Estado" alias="Estado" />  
+
         <typeAlias type="org.beans.Paciente" alias="Paciente" />  
+
+        <typeAlias type="org.beans.Receta" alias="Receta" />  
+
+        <typeAlias type="org.beans.Secretaria" alias="Secretaria" />  
     </typeAliases>
+  
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="org.postgresql.Driver"/>
-                <property name="url" value="jdbc:postgresql://localhost:5432/NoticiasDB"/>
+                <property name="url" value="jdbc:postgresql://localhost:5432/consultorio_medico"/>
                 <property name="username" value="postgres"/>
-                <property name="password" value="12345"/>
+                <property name="password" value="123"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/data/Paciente.xml"/>
-        
+        <mapper resource="org/data/Cita.xml"/>    
+
+        <mapper resource="org/data/Consutorio.xml"/>    
+
+        <mapper resource="org/data/Doctor.xml"/>    
+
+        <mapper resource="org/data/Estado.xml"/>    
+
+        <mapper resource="org/data/Paciente.xml"/>    
+
+        <mapper resource="org/data/Reseta.xml"/>    
+
+        <mapper resource="org/data/Secretaria.xml"/>    
     </mappers>
 </configuration>

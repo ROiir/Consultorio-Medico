@@ -5,18 +5,18 @@
 <mapper namespace="Estado">
 
     <delete id="eliminar" parameterType="String">
-        delete from "estatus"
+        delete from "estado"
         where "id_estatus"=#{id_estatus}
     </delete>
     
-    <update id="actualizar" parameterType="Estado">
+    <update id="actualizar" parameterType="Paciente">
         UPDATE "id_estatus"
         SET "estatus"=#{estatus}
         WHERE "id_estatus"=#{id_estatus}
     </update>
     
-    <insert id="insertar" parameterType="Estado"  keyProperty="id_estatus" >
-        insert into "estatus"("id_estatus","estatus")  values (#{id_estatus},#{estatus})
+    <insert id="insertar" parameterType="Pasiente"  keyProperty="id_estatus" >
+        insert into "Pasiente"("id_estatus","estatus")  values (#{id_estatus},#{estatus})
     </insert>
  <!--       
     <select id="buscarPorId" parameterType="int" resultType="Perfil">
@@ -34,3 +34,4 @@
     </resultMap>
 -->
 </mapper>
+

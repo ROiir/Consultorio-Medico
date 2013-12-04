@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package org.dao;
 import java.util.List;
@@ -10,10 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.beans.Doctor;
 import org.utils.MybatisUtil;
-/**
- *
- * @author rodrigo
- */
+
 public class DoctorDao {
     private SqlSessionFactory sqlSessionFactory;
     public DoctorDao() {

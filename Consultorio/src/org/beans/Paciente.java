@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.beans;
-
-/**
- *
- * @author rodrigo
- */
 public class Paciente {
     private String curp;
-    private String nombre;
+    private String nombre_pa;
     private String direccion_pa;
     private String telefono_pa;
     private String email_pa;
+    private String doctor_username_doc;
 
     public String getCurp() {
         return curp;
@@ -25,12 +15,12 @@ public class Paciente {
         this.curp = curp;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_pa() {
+        return nombre_pa;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre_pa(String nombre_pa) {
+        this.nombre_pa = nombre_pa;
     }
 
     public String getDireccion_pa() {
@@ -56,6 +46,12 @@ public class Paciente {
     public void setEmail_pa(String email_pa) {
         this.email_pa = email_pa;
     }
-    
-    
+
+    public String getDoctor_username_doc() {
+        return doctor_username_doc;
+    }
+
+    public void setDoctor_username_doc(String doctor_username_doc) {
+        this.doctor_username_doc = doctor_username_doc;
+    }
 }

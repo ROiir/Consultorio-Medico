@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.beans;
 import java.util.Date;
-/**
- *
- * @author rodrigo
- */
+
 public class Cita {
     private int cve_cita;
-    private String curp;
+    private String paciente_curp;
     private Date fecha;
-    private int id_estatud;
+    private int estatus_idestatud;
 
     public int getCve_cita() {
         return cve_cita;
@@ -24,12 +15,12 @@ public class Cita {
         this.cve_cita = cve_cita;
     }
 
-    public String getCurp() {
-        return curp;
+    public String getPaciente_curp() {
+        return paciente_curp;
     }
 
-    public void setCurp(String curp) {
-        this.curp = curp;
+    public void setPaciente_curp(String paciente_curp) {
+        this.paciente_curp = paciente_curp;
     }
 
     public Date getFecha() {
@@ -40,12 +31,11 @@ public class Cita {
         this.fecha = fecha;
     }
 
-    public int getId_estatud() {
-        return id_estatud;
+    public int getEstatus_idestatud() {
+        return estatus_idestatud;
     }
 
-    public void setId_estatud(int id_estatud) {
-        this.id_estatud = id_estatud;
+    public void setEstatus_idestatud(int estatus_idestatud) {
+        this.estatus_idestatud = estatus_idestatud;
     }
-    
 }

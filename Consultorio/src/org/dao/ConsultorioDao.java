@@ -1,26 +1,28 @@
 package org.dao;
+
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.beans.Cita;
 import org.beans.Doctor;
-import org.beans.Receta;
 import org.utils.MybatisUtil;
 
-public class RecetaDao {
-    private SqlSessionFactory sqlSessionFactory;
-    public RecetaDao() {
+public class ConsultorioDao {
+
+         private SqlSessionFactory sqlSessionFactory;
+    public ConsultorioDao() {
         sqlSessionFactory = MybatisUtil.getSqlSessionFactory();
     }
 
-    public boolean create(Receta receta) {
+    public boolean create(Cita cita) {
          SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.insert("Doctor.insertar", receta);
+            session.insert("Consultorio.insertar", cita);
             
             session.commit();
             return true;
         } catch (Exception e) {
-            System.out.println("Error en RecetaDao>insertar" + e.getMessage());
+            System.out.println("Error en ConsultorioDAO>insertar" + e.getMessage());
             session.rollback();
             return false;
         } finally {
@@ -28,14 +30,14 @@ public class RecetaDao {
         }
     }
     
-     public boolean update(Receta receta) {
+     public boolean update(Cita cita) {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.update("Receta.actualizar", receta);
+            session.update("Consultorio.actualizar", cita);
             session.commit();
             return true;
         } catch (Exception e) {
-            System.out.println("Error en RecetaDao>update" + e.getMessage());
+            System.out.println("Error en ConsultorioDao>update" + e.getMessage());
             session.rollback();
             return false;
         } finally {
@@ -43,14 +45,14 @@ public class RecetaDao {
         }
     }
     
-     public boolean delect(String recetacol) {
+     public boolean delect(String cve_cita) {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.delete("Receta.eliminar", recetacol);
+            session.delete("Consultorio.eliminar", cve_cita);
             session.commit();
             return true;
         } catch (Exception e) {
-            System.out.println("Error en RecetaDao>update" + e.getMessage());
+            System.out.println("Error en ConsultorioDao>update" + e.getMessage());
             session.rollback();
             return false;
         } finally {
@@ -58,10 +60,10 @@ public class RecetaDao {
         }
     }
      
-     public List<Receta> buscarTodos() {
+     public List<Cita> buscarTodos() {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            List<Receta> usuarios = session.selectList("receta.buscarTodos");
+            List<Cita> usuarios = session.selectList("Consultorio.buscarTodos");
             return usuarios;
         } catch (Exception e) {
             return null;

@@ -1,20 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.beans;
-
-/**
- *
- * @author rodrigo
- */
 public class Receta {
     private int recetacol;
-    private String curp;
+    private String paciente_curp;
     private String enfermedades;
-    private String medicina;
+    private String medicamento;
 
     public int getRecetacol() {
         return recetacol;
@@ -23,13 +12,13 @@ public class Receta {
     public void setRecetacol(int recetacol) {
         this.recetacol = recetacol;
     }
-    
-    public String getCurp() {
-        return curp;
+
+    public String getPaciente_curp() {
+        return paciente_curp;
     }
 
-    public void setCurp(String curp) {
-        this.curp = curp;
+    public void setPaciente_curp(String paciente_curp) {
+        this.paciente_curp = paciente_curp;
     }
 
     public String getEnfermedades() {
@@ -40,12 +29,12 @@ public class Receta {
         this.enfermedades = enfermedades;
     }
 
-    public String getMedicina() {
-        return medicina;
+    public String getMedicamento() {
+        return medicamento;
     }
 
-    public void setMedicina(String medicina) {
-        this.medicina = medicina;
+    public void setMedicamento(String medicamento) {
+        this.medicamento = medicamento;
     }
-    
+
 }

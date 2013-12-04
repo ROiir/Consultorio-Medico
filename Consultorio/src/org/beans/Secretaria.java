@@ -1,15 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.beans;
-
-/**
- *
- * @author rodrigo
- */
 public class Secretaria {
     private String nombre_sec;
     private String username_sec;
@@ -17,6 +6,7 @@ public class Secretaria {
     private String direccion_sec;
     private String telefono_sec;
     private String email_sec;
+    private String consultorio_nombre_con;
 
     public String getNombre_sec() {
         return nombre_sec;
@@ -64,6 +54,14 @@ public class Secretaria {
 
     public void setEmail_sec(String email_sec) {
         this.email_sec = email_sec;
+    }
+
+    public String getConsultorio_nombre_con() {
+        return consultorio_nombre_con;
+    }
+
+    public void setConsultorio_nombre_con(String consultorio_nombre_con) {
+        this.consultorio_nombre_con = consultorio_nombre_con;
     }
     
 }

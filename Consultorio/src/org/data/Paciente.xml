@@ -15,8 +15,8 @@
         WHERE "curp"=#{curp}
     </update>
     
-    <insert id="insertar" parameterType="Pasiente"  keyProperty="curp" >
-        insert into "Pasiente"("curp","nombre_pa")  values (#{curp},#{nombre_pa})
+    <insert id="insertar" parameterType="Paciente"  keyProperty="curp" >
+        insert into "paciente"("curp","nombre_pa","")  values (#{curp},#{nombre})
     </insert>
  <!--       
     <select id="buscarPorId" parameterType="int" resultType="Perfil">
@@ -33,4 +33,13 @@
         <result column="descripcion" property="descripcion"></result>
     </resultMap>
 -->
+
+  
+    <resultMap type="Paciente" id="resultado"> 
+        <id column="curp" property="curp"></id>
+        <result column="nombre_pa" property="nombre"></result>
+        <result column="direccion_pa" property="direccion_pa"></result>
+        <result column="telefono_pa" property="telefono_pa"></result>
+        <result column="email_pa" property="email_pa"></result>
+    </resultMap>
 </mapper>

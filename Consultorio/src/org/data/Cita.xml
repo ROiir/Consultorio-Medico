@@ -2,21 +2,21 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Estado">
+<mapper namespace="Cita">
 
     <delete id="eliminar" parameterType="String">
-        delete from "estatus"
-        where "id_estatus"=#{id_estatus}
+        delete from "cita"
+        where "cve_cita"=#{cve_cita}
     </delete>
     
-    <update id="actualizar" parameterType="Estado">
-        UPDATE "id_estatus"
-        SET "estatus"=#{estatus}
-        WHERE "id_estatus"=#{id_estatus}
+    <update id="actualizar" parameterType="Paciente">
+        UPDATE "cve_cita"
+        SET "fecha"=#{fecha}
+        WHERE "cve_cita"=#{cve_cita}
     </update>
     
-    <insert id="insertar" parameterType="Estado"  keyProperty="id_estatus" >
-        insert into "estatus"("id_estatus","estatus")  values (#{id_estatus},#{estatus})
+    <insert id="insertar" parameterType="Pasiente"  keyProperty="id_estatus" >
+        insert into "Pasiente"("id_estatus","estatus","estatus_idestatus","paciente_curp")  values (#{id_estatus},#{estatus},#{estatus_idestatus},#{paciente_curp})
     </insert>
  <!--       
     <select id="buscarPorId" parameterType="int" resultType="Perfil">

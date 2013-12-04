@@ -1,24 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.beans;
 
-/**
- *
- * @author rodrigo
- */
 public class Doctor {
     private String nombre_doc;
     private String username_doc;
     private String password_doc;
-    private String especialidad;
-    private String cedula;
+    private String especialidad_doc;
+    private String cedula_doc;
     private String direccion_doc;
     private String telefono_doc;
-    private String email;
+    private String email_doc;
+    private String consultori_nombre_con;
 
     public String getNombre_doc() {
         return nombre_doc;
@@ -28,11 +19,11 @@ public class Doctor {
         this.nombre_doc = nombre_doc;
     }
 
-    public String getUser_name() {
+    public String getUsername_doc() {
         return username_doc;
     }
 
-    public void setUser_name(String username_doc) {
+    public void setUsername_doc(String username_doc) {
         this.username_doc = username_doc;
     }
 
@@ -44,20 +35,20 @@ public class Doctor {
         this.password_doc = password_doc;
     }
 
-    public String getEspecialidad() {
-        return especialidad;
+    public String getEspecialidad_doc() {
+        return especialidad_doc;
     }
 
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setEspecialidad_doc(String especialidad_doc) {
+        this.especialidad_doc = especialidad_doc;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getCedula_doc() {
+        return cedula_doc;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setCedula_doc(String cedula_doc) {
+        this.cedula_doc = cedula_doc;
     }
 
     public String getDireccion_doc() {
@@ -76,12 +67,20 @@ public class Doctor {
         this.telefono_doc = telefono_doc;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail_doc() {
+        return email_doc;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail_doc(String email_doc) {
+        this.email_doc = email_doc;
     }
-    
+
+    public String getConsultori_nombre_con() {
+        return consultori_nombre_con;
+    }
+
+    public void setConsultori_nombre_con(String consultori_nombre_con) {
+        this.consultori_nombre_con = consultori_nombre_con;
+    }
+
 }
