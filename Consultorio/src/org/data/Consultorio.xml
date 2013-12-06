@@ -1,10 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Consultorio">
 
-
-<root>
+    <delete id="eliminar" parameterType="Consultorio">
+        delete from "consultorio"
+        where "nombre_con"=#{nombre_con}
+    </delete>
     
-</root>
+    <update id="actualizar" parameterType="Consultorio">
+        UPDATE "consultorio"
+        SET "nombre_con"=#{nombre_con},
+        "derecciion_con"=#{derecciion_con}
+        WHERE "nombre_con"=#{nombre_con}
+    </update>
+
+    <insert id="insertar" parameterType="Consultorio"  keyProperty="nombre_con" >
+        insert into "consultorio"("nombre_con","derecciion_con")  values (#{nombre_con},#{derecciion_con})
+    </insert>
+ 
+</mapper>

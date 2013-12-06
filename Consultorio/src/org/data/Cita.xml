@@ -4,19 +4,19 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Cita">
 
-    <delete id="eliminar" parameterType="String">
+    <delete id="eliminar" parameterType="Cita">
         delete from "cita"
         where "cve_cita"=#{cve_cita}
     </delete>
     
-    <update id="actualizar" parameterType="Paciente">
-        UPDATE "cve_cita"
+    <update id="actualizar" parameterType="Cita">
+        UPDATE "cita"
         SET "fecha"=#{fecha}
         WHERE "cve_cita"=#{cve_cita}
     </update>
     
-    <insert id="insertar" parameterType="Pasiente"  keyProperty="id_estatus" >
-        insert into "Pasiente"("id_estatus","estatus","estatus_idestatus","paciente_curp")  values (#{id_estatus},#{estatus},#{estatus_idestatus},#{paciente_curp})
+    <insert id="insertar" parameterType="Cita"  keyProperty="cve_cita" >
+        insert into "cita"("cve_cita","fecha","estatus_idestatus","paciente_curp")  values (#{cve_cita},#{fecha},#{estatus_idestatus},#{paciente_curp})
     </insert>
  <!--       
     <select id="buscarPorId" parameterType="int" resultType="Perfil">

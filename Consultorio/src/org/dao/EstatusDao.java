@@ -2,23 +2,23 @@ package org.dao;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.beans.Estado;
+import org.beans.Estatus;
 import org.utils.MybatisUtil;
-public class EstadoDao {
+public class EstatusDao {
     private SqlSessionFactory sqlSessionFactory;
-    public EstadoDao() {
+    public EstatusDao() {
         sqlSessionFactory = MybatisUtil.getSqlSessionFactory();
     }
 
-    public boolean create(Estado estado) {
+    public boolean create(Estatus Estatus) {
          SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.insert("Estado.insertar", estado);
+            session.insert("Estatus.insertar", Estatus);
             
             session.commit();
             return true;
         } catch (Exception e) {
-            System.out.println("Error en EstadoDao>insertar" + e.getMessage());
+            System.out.println("Error en EstatusDao>insertar" + e.getMessage());
             session.rollback();
             return false;
         } finally {
@@ -26,14 +26,14 @@ public class EstadoDao {
         }
     }
     
-     public boolean update(Estado estado) {
+     public boolean update(Estatus estatus) {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.update("Estado.actualizar", estado);
+            session.update("Estatus.actualizar", estatus);
             session.commit();
             return true;
         } catch (Exception e) {
-            System.out.println("Error en EstadoDao>update" + e.getMessage());
+            System.out.println("Error enEstatusDao>update" + e.getMessage());
             session.rollback();
             return false;
         } finally {
@@ -44,11 +44,11 @@ public class EstadoDao {
      public boolean delect(String idestatus) {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.delete("Estado.eliminar", idestatus);
+            session.delete("Estatus.eliminar", idestatus);
             session.commit();
             return true;
         } catch (Exception e) {
-            System.out.println("Error en EstadoDao>update" + e.getMessage());
+            System.out.println("Error en EstatusDao>Eliminar" + e.getMessage());
             session.rollback();
             return false;
         } finally {
@@ -56,10 +56,10 @@ public class EstadoDao {
         }
     }
      
-     public List<Estado> buscarTodos() {
+     public List<Estatus> buscarTodos() {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            List<Estado> usuarios = session.selectList("Estado.buscarTodos");
+            List<Estatus> usuarios = session.selectList("Estatus.buscarTodos");
             return usuarios;
         } catch (Exception e) {
             return null;

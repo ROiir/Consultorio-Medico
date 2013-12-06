@@ -2,11 +2,10 @@ package org.dao;
 
 import java.util.List;
 import junit.framework.TestCase;
-import org.beans.Estado;
-
-public class EstadoDaoTest extends TestCase {
+import org.beans.Estatus;
+public class EstatusDaoTest extends TestCase {
     
-    public EstadoDaoTest(String testName) {
+    public EstatusDaoTest(String testName) {
         super(testName);
     }
     
@@ -21,37 +20,37 @@ public class EstadoDaoTest extends TestCase {
     }
 
     /**
-     * Test of create method, of class EstadoDao.
+     * Test of create method, of class EstatusDao.
      */
     public void testCreate() {
         System.out.println("create");
-        Estado estado = new Estado();
+        Estatus estado = new Estatus();
         estado.setEstatus("Confirmado");
-        estado.setId_estatus(1);
-        EstadoDao instance = new EstadoDao();
+        estado.setId_estatus(2);
+        EstatusDao instance = new EstatusDao();
         boolean expResult = false;
         boolean result = instance.create(estado);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+
 /*
-    public void testUpdate() {
+ public void testUpdate() {
         System.out.println("update");
-        Estado estado = null;
-        EstadoDao instance = new EstadoDao();
+        Estatus estatus = null;
+        EstatusDao instance = new EstatusDao();
         boolean expResult = false;
-        boolean result = instance.update(estado);
+        boolean result = instance.update(estatus);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-
-public void testDelect() {
+    public void testDelect() {
         System.out.println("delect");
         String idestatus = "";
-        EstadoDao instance = new EstadoDao();
+        EstatusDao instance = new EstatusDao();
         boolean expResult = false;
         boolean result = instance.delect(idestatus);
         assertEquals(expResult, result);
@@ -59,14 +58,14 @@ public void testDelect() {
         fail("The test case is a prototype.");
     }
 
-
-public void testBuscarTodos() {
+ public void testBuscarTodos() {
         System.out.println("buscarTodos");
-        EstadoDao instance = new EstadoDao();
+        EstatusDao instance = new EstatusDao();
         List expResult = null;
         List result = instance.buscarTodos();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }*/
+    }
+    */
 }

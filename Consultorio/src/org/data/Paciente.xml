@@ -4,42 +4,27 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Paciente">
 
-    <delete id="eliminar" parameterType="String">
+    <delete id="eliminar" parameterType="Paciente">
         delete from "paciente"
         where "curp"=#{curp}
     </delete>
     
     <update id="actualizar" parameterType="Paciente">
-        UPDATE "curp"
-        SET "nombre_pa"=#{nombre_pa}
+        UPDATE "paciente"
+        SET "curp"=#{curp},
+            "nombre_pa"=#{nombre_pa},
+            "direccion_pa"=#{direccion_pa},
+            "telefono_pa"=#{telefono_pa},
+            "email_pa"=#{email_pa},
+            "doctor_username_doc"=#{doctor_username_doc}
         WHERE "curp"=#{curp}
     </update>
     
     <insert id="insertar" parameterType="Paciente"  keyProperty="curp" >
-        insert into "paciente"("curp","nombre_pa","")  values (#{curp},#{nombre})
+        insert into "paciente"("curp","nombre_pa","direccion_pa",
+                               "telefono_pa","email_pa","doctor_username_doc")  
+                       values (#{curp},#{nombre},#{direccion_pa},
+                               #{telefono_pa},#{email_pa},#{doctor_username_doc})
     </insert>
- <!--       
-    <select id="buscarPorId" parameterType="int" resultType="Perfil">
-        select p.perfil_id,p.descripcion from "perfil" p where p.perfil_id=#{perfil_id}
-    </select>
- 
-    
-    <select id="buscarTodos" resultType="Perfil" resultMap="resultado">
-        select p.perfil_id,p.descripcion from "perfil" p     
-    </select>
-    
-    <resultMap type="Perfil" id="resultado"> 
-        <id column="perfil_id" property="perfil_id"></id>
-        <result column="descripcion" property="descripcion"></result>
-    </resultMap>
--->
-
   
-    <resultMap type="Paciente" id="resultado"> 
-        <id column="curp" property="curp"></id>
-        <result column="nombre_pa" property="nombre"></result>
-        <result column="direccion_pa" property="direccion_pa"></result>
-        <result column="telefono_pa" property="telefono_pa"></result>
-        <result column="email_pa" property="email_pa"></result>
-    </resultMap>
 </mapper>

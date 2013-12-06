@@ -2,35 +2,25 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Estado">
+<mapper namespace="Receta">
 
-    <delete id="eliminar" parameterType="String">
-        delete from "estado"
-        where "id_estatus"=#{id_estatus}
+    <delete id="eliminar" parameterType="Receta">
+        delete from "receta"
+        where "recetacol"=#{recetacol}
     </delete>
     
-    <update id="actualizar" parameterType="Paciente">
-        UPDATE "id_estatus"
-        SET "estatus"=#{estatus}
-        WHERE "id_estatus"=#{id_estatus}
+    <update id="actualizar" parameterType="Receta">
+        UPDATE "receta"
+        SET "recetacol"=#{recetacol},
+            "enfermedades"=#{enfermedades},
+            "medicamento"=#{medicamento},
+            "paciente_curp"=#{paciente_curp}
+        WHERE "recetacol"=#{recetacol}
     </update>
     
-    <insert id="insertar" parameterType="Pasiente"  keyProperty="id_estatus" >
-        insert into "Pasiente"("id_estatus","estatus")  values (#{id_estatus},#{estatus})
+    <insert id="insertar" parameterType="Receta"  keyProperty="recetacol" >
+        insert into "receta"("recetacol","enfermedades","medicamento","paciente_curp")  
+                     values (#{recetacol},#{enfermedades},#{medicamento},#{paciente_curp})
     </insert>
- <!--       
-    <select id="buscarPorId" parameterType="int" resultType="Perfil">
-        select p.perfil_id,p.descripcion from "perfil" p where p.perfil_id=#{perfil_id}
-    </select>
  
-    
-    <select id="buscarTodos" resultType="Perfil" resultMap="resultado">
-        select p.perfil_id,p.descripcion from "perfil" p     
-    </select>
-    
-    <resultMap type="Perfil" id="resultado"> 
-        <id column="perfil_id" property="perfil_id"></id>
-        <result column="descripcion" property="descripcion"></result>
-    </resultMap>
--->
 </mapper>

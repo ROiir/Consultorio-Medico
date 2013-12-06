@@ -5,9 +5,9 @@
 <configuration>    
 
     <typeAliases>
-         <typeAlias type="org.beans.Estado" alias="Estado" />  
+        <typeAlias type="org.beans.Estatus" alias="Estatus" />  
 
-         <typeAlias type="org.beans.Cita" alias="Cita" />  
+        <typeAlias type="org.beans.Cita" alias="Cita" />  
   
         <typeAlias type="org.beans.Consultorio" alias="Consultorio" />  
  
@@ -32,7 +32,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/data/Estado.xml"/>  
+        <mapper resource="org/data/Estatus.xml"/>  
  
         <mapper resource="org/data/Cita.xml"/>    
 
@@ -42,7 +42,7 @@
  
         <mapper resource="org/data/Paciente.xml"/>    
 
-        <mapper resource="org/data/Reseta.xml"/>    
+        <mapper resource="org/data/Receta.xml"/>    
 
         <mapper resource="org/data/Secretaria.xml"/>    
     </mappers>

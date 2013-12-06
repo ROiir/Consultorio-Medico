@@ -2,36 +2,32 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Estado">
+<mapper namespace="Doctor">
 
-    <delete id="eliminar" parameterType="String">
-        delete from "estado"
-        where "id_estatus"=#{id_estatus}
+    <delete id="eliminar" parameterType="Doctor">
+        delete from "doctor"
+        where "username_doc"=#{username_doc}
     </delete>
     
-    <update id="actualizar" parameterType="Paciente">
-        UPDATE "id_estatus"
-        SET "estatus"=#{estatus}
-        WHERE "id_estatus"=#{id_estatus}
+    <update id="actualizar" parameterType="Doctor">
+        UPDATE "doctor"
+        SET "username_doc"=#{username_doc},
+            "nombre_doc "=#{nombre_doc },
+            "password_doc"=#{password_doc},
+            "especialidad_doc"=#{especialidad_doc},
+            "cedula_doc"=#{cedula_doc},
+            "direccion_doc"=#{direccion_doc},
+            "telefono_doc"=#{telefono_doc},
+            "email_doc"=#{email_doc}
+            "consultorio_nombre_con"=#{consultorio_nombre_con},
+        WHERE "username_doc"=#{username_doc}
     </update>
     
-    <insert id="insertar" parameterType="Pasiente"  keyProperty="id_estatus" >
-        insert into "Pasiente"("id_estatus","estatus")  values (#{id_estatus},#{estatus})
+    <insert id="insertar" parameterType="Doctor"  keyProperty="username_doc" >
+        insert into "doctor"("username_doc","nombre_doc","password_doc","especialidad_doc"
+                             "cedula_doc","direccion_doc","telefono_doc","email_doc","consultorio_nombre_con")  
+                    values (#{username_doc},#{nombre_doc},#{password_doc},#{especialidad_doc},
+                            #{cedula_doc},#{direccion_doc},#{telefono_doc},#{email_doc},#{consultorio_nombre_con})
     </insert>
- <!--       
-    <select id="buscarPorId" parameterType="int" resultType="Perfil">
-        select p.perfil_id,p.descripcion from "perfil" p where p.perfil_id=#{perfil_id}
-    </select>
- 
-    
-    <select id="buscarTodos" resultType="Perfil" resultMap="resultado">
-        select p.perfil_id,p.descripcion from "perfil" p     
-    </select>
-    
-    <resultMap type="Perfil" id="resultado"> 
-        <id column="perfil_id" property="perfil_id"></id>
-        <result column="descripcion" property="descripcion"></result>
-    </resultMap>
--->
 </mapper>
 
