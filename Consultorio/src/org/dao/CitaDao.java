@@ -3,7 +3,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.beans.Cita;
-import org.beans.Doctor;
 import org.utils.MybatisUtil;
 
 public class CitaDao {

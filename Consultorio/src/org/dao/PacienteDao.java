@@ -45,7 +45,7 @@ public class PacienteDao {
      public boolean delect(String curp) {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.delete("Categoria.eliminar", curp);
+            session.delete("Paciente.eliminar", curp);
             session.commit();
             return true;
         } catch (Exception e) {

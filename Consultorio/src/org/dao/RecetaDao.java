@@ -2,7 +2,6 @@ package org.dao;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.beans.Doctor;
 import org.beans.Receta;
 import org.utils.MybatisUtil;
 
@@ -15,7 +14,7 @@ public class RecetaDao {
     public boolean create(Receta receta) {
          SqlSession session = sqlSessionFactory.openSession();
         try {
-            session.insert("Doctor.insertar", receta);
+            session.insert("Receta.insertar", receta);
             
             session.commit();
             return true;

@@ -33,7 +33,7 @@ public class EstatusDao {
             session.commit();
             return true;
         } catch (Exception e) {
-            System.out.println("Error enEstatusDao>update" + e.getMessage());
+            System.out.println("Error en EstatusDao>update" + e.getMessage());
             session.rollback();
             return false;
         } finally {

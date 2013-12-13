@@ -9,7 +9,15 @@ public class Doctor {
     private String direccion_doc;
     private String telefono_doc;
     private String email_doc;
-    private String consultori_nombre_con;
+    private String consultorio_nombre_con;
+
+    public String getConsultorio_nombre_con() {
+        return consultorio_nombre_con;
+    }
+
+    public void setConsultorio_nombre_con(String consultorio_nombre_con) {
+        this.consultorio_nombre_con = consultorio_nombre_con;
+    }
 
     public String getNombre_doc() {
         return nombre_doc;
@@ -73,14 +81,6 @@ public class Doctor {
 
     public void setEmail_doc(String email_doc) {
         this.email_doc = email_doc;
-    }
-
-    public String getConsultori_nombre_con() {
-        return consultori_nombre_con;
-    }
-
-    public void setConsultori_nombre_con(String consultori_nombre_con) {
-        this.consultori_nombre_con = consultori_nombre_con;
     }
 
 }

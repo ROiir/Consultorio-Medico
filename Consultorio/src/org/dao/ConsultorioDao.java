@@ -3,8 +3,7 @@ package org.dao;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.beans.Cita;
-import org.beans.Doctor;
+import org.beans.Consultorio;
 import org.utils.MybatisUtil;
 
 public class ConsultorioDao {
@@ -14,7 +13,7 @@ public class ConsultorioDao {
         sqlSessionFactory = MybatisUtil.getSqlSessionFactory();
     }
 
-    public boolean create(Cita cita) {
+    public boolean create(Consultorio cita) {
          SqlSession session = sqlSessionFactory.openSession();
         try {
             session.insert("Consultorio.insertar", cita);
@@ -30,7 +29,7 @@ public class ConsultorioDao {
         }
     }
     
-     public boolean update(Cita cita) {
+     public boolean update(Consultorio cita) {
         SqlSession session = sqlSessionFactory.openSession();
         try {
             session.update("Consultorio.actualizar", cita);
@@ -60,10 +59,10 @@ public class ConsultorioDao {
         }
     }
      
-     public List<Cita> buscarTodos() {
+     public List<Consultorio> buscarTodos() {
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            List<Cita> usuarios = session.selectList("Consultorio.buscarTodos");
+            List<Consultorio> usuarios = session.selectList("Consultorio.buscarTodos");
             return usuarios;
         } catch (Exception e) {
             return null;

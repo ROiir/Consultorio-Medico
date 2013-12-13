@@ -2,7 +2,6 @@ package org.dao;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.beans.Doctor;
 import org.beans.Secretaria;
 import org.utils.MybatisUtil;
 
@@ -28,7 +27,7 @@ public class SecretariaDao {
         }
     }
     
-     public boolean update(Doctor doctor) {
+     public boolean update(Secretaria doctor) {
         SqlSession session = sqlSessionFactory.openSession();
         try {
             session.update("Secretaria.actualizar", doctor);

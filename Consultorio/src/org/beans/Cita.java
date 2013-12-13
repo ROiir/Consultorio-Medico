@@ -5,7 +5,15 @@ public class Cita {
     private int cve_cita;
     private String paciente_curp;
     private Date fecha;
-    private int estatus_idestatud;
+    private int estatus_idestatus;
+
+    public int getEstatus_idestatus() {
+        return estatus_idestatus;
+    }
+
+    public void setEstatus_idestatus(int estatus_idestatus) {
+        this.estatus_idestatus = estatus_idestatus;
+    }
 
     public int getCve_cita() {
         return cve_cita;
@@ -29,13 +37,5 @@ public class Cita {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public int getEstatus_idestatud() {
-        return estatus_idestatud;
-    }
-
-    public void setEstatus_idestatud(int estatus_idestatud) {
-        this.estatus_idestatud = estatus_idestatud;
     }
 }

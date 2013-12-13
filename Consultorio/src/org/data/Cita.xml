@@ -11,7 +11,9 @@
     
     <update id="actualizar" parameterType="Cita">
         UPDATE "cita"
-        SET "fecha"=#{fecha}
+        SET "fecha"=#{fecha},
+        "estatus_idestatus"=#{estatus_idestatus},
+        "paciente_curp"=#{paciente_curp}
         WHERE "cve_cita"=#{cve_cita}
     </update>
     
