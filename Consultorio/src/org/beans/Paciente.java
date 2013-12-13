@@ -1,4 +1,7 @@
 package org.beans;
+
+import javax.swing.JTextField;
+
 public class Paciente {
     private String curp;
     private String nombre_pa;
@@ -53,5 +56,9 @@ public class Paciente {
 
     public void setDoctor_username_doc(String doctor_username_doc) {
         this.doctor_username_doc = doctor_username_doc;
+    }
+
+    public void setNombre_pa(JTextField txtNombreNuevoPaciente) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
